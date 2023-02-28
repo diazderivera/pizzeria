@@ -1,0 +1,206 @@
+/*estilos generales*/
+
+/*fuentes*/
+@font-face {
+	font-family: afflic;
+	src: url(../fonts/affliction.ttf);
+}
+@font-face {
+	font-family: purple;
+	src: url(../fonts/purplesmile.otf);
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+body  {
+	font-size: 20px;
+}
+header {
+	width: 80%;
+	**background-color: lightblue;
+	**height: 100px;
+	margin: 0 auto;
+	text-align: center;
+}
+main {
+	width: 80%;
+	margin: 0 auto;
+	**background-color: lightcoral;
+	**height: 300px;
+	padding: 10px 0;
+}
+footer {
+	width: 80%;
+	background-color: grey;
+	padding: 5px 10%;
+	**height: 100px;
+}
+header img {
+	width: 120px;
+	vertical-align: middle;
+}
+nav{
+	width: 70%;
+	**background-color: tomato;
+	**height: 60px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+li {
+	list-style-type: none;
+	display: inline-block;
+	**background-color: yellow;
+	width: 100px;
+}
+a { 
+	color:black;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration: underline;
+}
+main iframe {
+	width: 100%;
+	height: 600px;
+	border: none;
+}
+footer iframe {
+	width: 280px;
+	height: 200px;
+}
+h3 {
+	font-family: 'Shantell Sans', cursive;
+	text-align: center;
+}
+h4 {
+	text-align: center;
+}
+img.foto {
+	width: 70%;
+	box-shadow: 3px 3px 8px black;
+	margin: 0 auto;
+	display: block;
+}
+div.oferta {
+	font-family: afflic;
+	width: 150px;
+	padding: 5px;
+	background-color: darkred;
+	color:white;
+	text-align: center;
+	font-weight: bold;
+	transform: translate(800px, -280px) rotateZ( 15deg);
+	animation: giro_oferta 5s linear;
+}
+img.moto {
+	width: 200px;
+	position: absolute;
+	top: 200px;
+	left:110%;
+	animation: mov_moto 5s linear;
+}
+div#visor {
+	position: relative;
+	width: 450px;
+	height: 200px;
+	margin: 5px auto;
+	overflow: hidden;
+	border:10px solid whitesmoke;
+	box-shadow: 3px 3px 6px black;
+}
+div#galeria {
+	width: 1800px;
+	height: 200px;
+	position: absolute;
+	left: 0px;	
+}
+div#galeria img {
+	width: 450px;
+
+}
+#fatras, #fadela {
+	position: absolute;
+	bottom:40px;
+	font-size: 22px;
+	padding: 5px;
+	background-color: rgba(80%, 80%, 80%, 0.7);
+	border: none;
+	border-radius: 10px;	
+}
+#fatras:hover, #fadela:hover {	
+	background-color: rgba(80%, 80%, 80%, 1);
+	cursor: pointer;
+}
+#fatras {
+	left:20px;
+	visibility: hidden;
+
+}
+#fadela {
+	right: 20px;
+}
+div.cajacategoria {
+	width: 100%;
+	background-color: lightblue;
+	margin: 5px 0;
+	overflow: hidden;
+	transition: height 1s;		
+}
+div.plegado {
+	height:30px;
+}
+div.desplegado {
+	height:290px;
+}
+div.cajapedido {
+	width: 23%;
+	height: 250px;
+	display: inline-block;
+	background-color: lightgreen;
+	margin: 5px 1%;
+	vertical-align: top;
+	box-shadow: 3px 3px 6px black;
+}
+div.cajapedido img {
+	width: 70%;
+	margin: 5px 15%;
+}
+label {
+	display: inline-block;
+	width: 80px;
+	margin: 10px 5px;
+}
+input[type="text"], input[type="number"], select, input[type="button"]{
+	width: 80px;
+	padding: 4px;
+}
+
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+}
+table {
+	width: 80%;
+	margin: 10px auto;
+}
+
+.izda 		{text-align: left;}
+.der 		{text-align: right;}
+.oculto 	{display: none;}
+.visible 	{display: inline-block;}
+
+
+/*Animaciones*/
+@keyframes giro_oferta {
+	  0%	{transform: translate(800px, -280px) rotateZ( 15deg);}
+	 50%	{transform: translate(800px, -280px) rotateZ(-15deg);}
+	100%	{transform: translate(800px, -280px) rotateZ( 15deg);}
+}
+@keyframes mov_moto {
+	  0%	{left: 110%}
+	100%	{left: -30%}
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<script src="js/funciones.js"></script>
+	<title>Inicio</title>
+</head>
+<body>
+<h3>Realice su Pedido!!</h3>
+<!-- pizzas -->
+<div class="cajacategoria plegado" id="cajapizza">
+	Pizzas
+	<input type="button" id="bmaspiz" value="+" 
+		class="visible" 
+		onclick="mostrarmas('cajapizza','bmaspiz','bmenpiz')">
+	<input type="button" id="bmenpiz"  value="-" 
+		class="oculto" 
+		onclick="mostrarmenos('cajapizza','bmaspiz','bmenpiz')">
+	<br>
+	<div class="cajapedido">
+		<h4>Barbacoa</h4>
+		<img src="images/pedido01.jpg">
+		<label for ="barbatam">Tamaño:</label>
+		<select id="barbatam">
+			<option value="1">Pequeña</option>
+			<option value="1.5">Grande</option>		
+		</select>
+		<label for ="barbacan">Cantidad:</label>
+		<input type="number" id="barbacan" min="0" max="5" value="0">	
+	</div><div class="cajapedido">
+		<h4>Vegetal</h4>	
+		<img src="images/pedido02.jpg">
+		<label for ="vegettam">Tamaño:</label>
+		<select id="vegettam">
+			<option value="1">Pequeña</option>
+			<option value="1.5">Grande</option>		
+		</select>
+		<label for ="vegetcan">Cantidad:</label>
+		<input type="number" id="vegetcan" min="0" max="5" value="0">			
+	</div><div class="cajapedido">
+		<h4>Carbonara</h4>	
+		<img src="images/pedido03.jpg">	
+		<label for ="carbotam">Tamaño:</label>
+		<select id="carbotam">
+			<option value="1">Pequeña</option>
+			<option value="1.5">Grande</option>		
+		</select>
+		<label for ="carbocan">Cantidad:</label>
+		<input type="number" id="carbocan" min="0" max="5" value="0">	
+	</div><div class="cajapedido">
+		<h4>4 Quesos</h4>		
+		<img src="images/pedido04.jpg">
+		<label for ="cquestam">Tamaño:</label>
+		<select id="cquestam">
+			<option value="1">Pequeña</option>
+			<option value="1.5">Grande</option>		
+		</select>
+		<label for ="cquescan">Cantidad:</label>
+		<input type="number" id="cquescan" min="0" max="5" value="0">			
+	</div>
+</div>
+<!-- Bebidas -->
+<div class="cajacategoria plegado" id="cajabebida">
+	Bebida
+	<input type="button" id="bmasbeb" value="+" 
+		class="visible" 
+		onclick="mostrarmas('cajabebida','bmasbeb','bmenbeb')">
+	<input type="button" id="bmenbeb"  value="-" 
+		class="oculto" 
+		onclick="mostrarmenos('cajabebida','bmasbeb', 'bmenbeb')">
+	<br>	
+	<div class="cajapedido">
+		<h4>Refresco</h4>
+		<img src="images/pedido05.jpg">
+		<label for ="refretam">Tamaño:</label>
+		<select id="refretam">
+			<option value="1">Pequeña</option>
+			<option value="1.5">Grande</option>		
+		</select>
+		<label for ="refrecan">Cantidad:</label>
+		<input type="number" id="refrecan" min="0" max="5" value="0">	
+	</div><div class="cajapedido">
+		<h4>Cerveza</h4>	
+		<img src="images/pedido06.jpg">
+		<label for ="cervetam">Tamaño:</label>
+		<select id="cervetam">
+			<option value="1">Sin Alcohol</option>
+			<option value="1.5">Normal</option>		
+		</select>
+		<label for ="cervecan">Cantidad:</label>
+		<input type="number" id="cervecan" min="0" max="5" value="0">			
+	</div>
+</div>
+<!-- Complementos -->
+<div class="cajacategoria plegado" id="cajacom">
+	Complementos
+	<input type="button" id="bmascom" value="+" 
+		class="visible" onclick="mostrarmas('cajacom','bmascom', 'bmencom')">
+	<input type="button" id="bmencom"  value="-" 
+		class="oculto" onclick="mostrarmenos('cajacom','bmascom', 'bmencom')">
+	<br>	
+	<div class="cajapedido">
+		<h4>Pan de Ajo</h4>
+		<img src="images/pedido07.jpg">
+		<label for ="refretam">Tipo:</label>
+		<select id="refretam">
+			<option value="1">Normal</option>
+			<option value="1.5">Con queso</option>		
+		</select>
+		<label for ="refrecan">Cantidad:</label>
+		<input type="number" id="refrecan" min="0" max="5" value="0">	
+	</div><div class="cajapedido">
+		<h4>Queso Provolone</h4>	
+		<img src="images/pedido08.jpg">
+		<label for ="cervetam">Tipo:</label>
+		<select id="cervetam">
+			<option value="1">Natural</option>
+			<option value="1.5">Albahaca</option>		
+		</select>
+		<label for ="cervecan">Cantidad:</label>
+		<input type="number" id="cervecan" min="0" max="5" value="0">			
+	</div>
+</div>
+<input type="button" Value="Calcular" onclick="calcularpedido()">
+
+
+<div id="respedido">
+	<table>
+		<tr>
+			<td colspan="3">Su Pedido</td>
+		</tr>
+		<tr>
+			<td class="izda" style="width: 20%;">Pizza</td>
+			<td style="width: 50%;" id="restxpiz"></td>
+			<td class="der" style="width: 30%;" id="resprpiz"></td>						
+		</tr>
+		<tr>
+			<td class="izda" style="width: 20%;">Bebida</td>
+			<td style="width: 50%;" id="restxbeb"></td>
+			<td class="der" style="width: 30%;" id="resprbeb"></td>						
+		</tr>
+		<tr>
+			<td class="izda" style="width: 20%;">Complementos</td>
+			<td style="width: 50%;" id="restxcom"></td>
+			<td class="der" style="width: 30%;" id="resprcom"></td>						
+		</tr>				
+	</table>
+
+</div>
+
+</body>
+</html>
